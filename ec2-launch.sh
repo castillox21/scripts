@@ -1,11 +1,14 @@
 #! /bin/bash
 
+#This script launches a new ec2 instance using the input values.
+
 clear
 
 echo "Enter your image ID (starting after ami-): "
 read image
 echo "Your AMI ID is: $image"
 
+#Ran to show keypairs
 ec2-describe-keypairs
 
 echo " "
