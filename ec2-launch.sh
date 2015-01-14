@@ -9,7 +9,8 @@ read image
 echo "Your AMI ID is: $image"
 
 #Ran to show keypairs
-ec2-describe-keypairs
+
+aws ec2 describe-key-pairs
 
 echo " "
 echo "Enter one of your available keypairs (name): "
