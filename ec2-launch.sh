@@ -4,21 +4,15 @@
 
 clear
 
-echo "Is this an HVM image (y or n): "
-read imagetype
+echo "Enter an instance type (t2.micro): "
+read instance
+echo "Your instance type is: $instance"
 
-if [ "$imagetype" = "y" ]; then
-	imagetype="t2.micro"
-else
-	imagetype="t1.micro"
-fi
-
-echo "Enter your image ID (starting after ami-): "
+echo "Enter an image id (a8d369c0): "
 read imageid
 echo "Your AMI ID is: $imageid"
 
 #Ran to show keypairs
-
 aws ec2 describe-key-pairs
 
 echo " "
@@ -30,7 +24,7 @@ echo "Enter a security group (default): "
 read  group
 echo "Your selected group is: $group" 
 
-aws ec2 run-instances --image-id ami-$imageid --count 1 --instance-type $imagetype --key-name $keypair --security-groups $group
+aws ec2 run-instances --image-id ami-$imageid --count 1 --instance-type $instance --key-name $keypair --security-groups $group
 
 
 
