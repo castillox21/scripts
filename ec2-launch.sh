@@ -8,7 +8,7 @@ echo "Is this an HVM image (y or n): "
 read imagetype
 
 if [ "$imagetype" = "y" ]; then
-	imagetype="m3.medium"
+	imagetype="t2.micro"
 else
 	imagetype="t1.micro"
 fi
