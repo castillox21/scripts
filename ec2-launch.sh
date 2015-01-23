@@ -55,3 +55,6 @@ echo $IP_ADD
 # Add a rule for SSH to $group security group
 aws ec2 authorize-security-group-ingress --group-name $group --protocol tcp --port 22 --cidr 0.0.0.0/0
 
+
+
+
